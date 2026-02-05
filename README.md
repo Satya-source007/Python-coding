@@ -35,45 +35,52 @@ losses = 3
 total_points = (wins * points_per_win) + (draws * points_per_draw) + (losses * points_per_loss)
 print("Total points earned by Team London:", total_points)   # 13
 ```
-2. Nutrition Bar Ingredient Percentages
-Nutrition bar contains:
+2. How Can We Detect Disease Accurately Using a Model?
 ```python
-raisins = 45
-almonds = 65
-apricots = 30
+# Disease Detection Model Accuracy
+diabetes_correct = 25
+diabetes_total = 30
 
-total_weight = raisins + almonds + apricots
+heart_correct = 35
+heart_total = 45
 
-perc_raisins  = (raisins  / total_weight) * 100
-perc_almonds  = (almonds  / total_weight) * 100
-perc_apricots = (apricots / total_weight) * 100
+cancer_correct = 20
+cancer_total = 25
 
-print(f"Raisins:  {perc_raisins:.2f}%")   # ~32.14%
-print(f"Almonds:  {perc_almonds:.2f}%")   # ~46.43%
-print(f"Apricots: {perc_apricots:.2f}%")  # ~21.43%
-```
-3.Disease Model Accuracy
-```python
-# Patients and correct detections
-diabetes_patients = 30
-correct_diabetes = 25
+# Individual accuracies
+diabetes_accuracy = (diabetes_correct / diabetes_total) * 100
+heart_accuracy = (heart_correct / heart_total) * 100
+cancer_accuracy = (cancer_correct / cancer_total) * 100
 
-heart_disease_patients = 45
-correct_heart_disease = 35
-
-cancer_patients = 25
-correct_cancer = 20
-
-# Total
-total_patients = diabetes_patients + heart_disease_patients + cancer_patients
-total_correct = correct_diabetes + correct_heart_disease + correct_cancer
+print(f"Diabetes detection accuracy: {diabetes_accuracy:.2f}%")
+print(f"Heart disease detection accuracy: {heart_accuracy:.2f}%")
+print(f"Cancer detection accuracy: {cancer_accuracy:.2f}%")
 
 # Overall accuracy
-accuracy = (total_correct / total_patients) * 100
-print(f"Model accuracy: {accuracy:.2f}%")  # Output: 80.00%
+total_correct = diabetes_correct + heart_correct + cancer_correct
+total_patients = diabetes_total + heart_total + cancer_total
+overall_accuracy = (total_correct / total_patients) * 100
+
+print(f"Overall model accuracy: {overall_accuracy:.2f}%")
+```
+3. Fruit Sales Data Structuring (Dictionary)
+```python
+# Fruit Sales Data Structuring
+fruit_list = ['Mango', 'Mango', 'Mango', 'Pineapple', 'Pineapple',
+              'Apple', 'Mango', 'Banana', 'Apple', 'Banana',
+              'Apple', 'Pineapple', 'Apple', 'Apple', 'Pineapple', 'Pineapple']
+
+fruit_dict = {}
+for fruit in fruit_list:
+    if fruit in fruit_dict:
+        fruit_dict[fruit] += 1
+    else:
+        fruit_dict[fruit] = 1
+
+print("Fruit sales count:", fruit_dict)
 ```
 
-4. Basic Algebra in Python
+4. Shipping Cost Calculator with Conditions
 ```python
 # f(x) = x² + 3x - 4
 def f(x):
@@ -85,7 +92,7 @@ print(f(-1))  # -6
 ```
 *Learning Outcomes After completing this mini-project you should be comfortable with:
 
- * Creating and using variables
+ * In short: Python bridges problem and solution—automating, analyzing, structuring, ruling, and modeling the real world through code.
  * Basic arithmetic operations (+, -, *, /)
  * Calculating percentages
  * Printing formatted output
